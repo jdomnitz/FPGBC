@@ -1,0 +1,2231 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xFDAFE3540D6AD734",
+      "device": "xc7a200tsbg484-1",
+      "gen_directory": "../../../../gameboy.gen/sources_1/bd/gameboy",
+      "name": "gameboy",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2"
+    },
+    "design_tree": {
+      "WRAM": "",
+      "BROM": "",
+      "CART_ROM": "",
+      "VRAM": "",
+      "clk_wiz_0": "",
+      "rgb2dvi_0": "",
+      "ALU": "",
+      "InternalBus1": "",
+      "CPU": "",
+      "ICU_0": "",
+      "INT_0": "",
+      "MBC1": "",
+      "InternalBus2": "",
+      "PPU": "",
+      "Registers": "",
+      "AddressBusMux_0": "",
+      "APU_0": "",
+      "ALU_B": "",
+      "ALU_A": "",
+      "DebugCable_0": "",
+      "div_0": "",
+      "HRAM_0": "",
+      "Timer_0": "",
+      "video_gen_0": ""
+    },
+    "ports": {
+      "btn_a": {
+        "type": "data",
+        "direction": "I"
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "led_0": {
+        "type": "data",
+        "direction": "O"
+      },
+      "led_1": {
+        "type": "data",
+        "direction": "O"
+      },
+      "led_2": {
+        "type": "data",
+        "direction": "O"
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "led_3": {
+        "type": "data",
+        "direction": "O"
+      },
+      "sda": {
+        "type": "data",
+        "direction": "IO"
+      },
+      "scl": {
+        "type": "data",
+        "direction": "O"
+      },
+      "ac_bclk": {
+        "type": "data",
+        "direction": "I"
+      },
+      "ac_lrclk": {
+        "type": "data",
+        "direction": "I"
+      },
+      "ac_dac_sdata": {
+        "type": "data",
+        "direction": "O"
+      },
+      "ac_mclk": {
+        "type": "data",
+        "direction": "O"
+      },
+      "ac_adc_sdata": {
+        "type": "data",
+        "direction": "I"
+      },
+      "uart_rx_out": {
+        "type": "data",
+        "direction": "O"
+      },
+      "btn_l": {
+        "type": "data",
+        "direction": "I"
+      },
+      "btn_r": {
+        "type": "data",
+        "direction": "I"
+      },
+      "hdmi_tx_clk_n": {
+        "type": "data",
+        "direction": "O"
+      },
+      "hdmi_tx_clk_p": {
+        "type": "data",
+        "direction": "O"
+      },
+      "hdmi_tx_n": {
+        "type": "data",
+        "direction": "O",
+        "left": "2",
+        "right": "0"
+      },
+      "hdmi_tx_p": {
+        "type": "data",
+        "direction": "O",
+        "left": "2",
+        "right": "0"
+      },
+      "btn_u": {
+        "type": "data",
+        "direction": "I"
+      },
+      "btn_d": {
+        "type": "data",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "WRAM": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "gameboy_blk_mem_gen_0_0",
+        "xci_path": "ip\\gameboy_blk_mem_gen_0_0\\gameboy_blk_mem_gen_0_0.xci",
+        "inst_hier_path": "WRAM",
+        "parameters": {
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Use_ENA_Pin"
+          },
+          "Operating_Mode_A": {
+            "value": "READ_FIRST"
+          },
+          "Read_Width_A": {
+            "value": "8"
+          },
+          "Register_PortA_Output_of_Memory_Core": {
+            "value": "false"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "8192"
+          },
+          "Write_Width_A": {
+            "value": "8"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "BROM": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "gameboy_blk_mem_gen_0_1",
+        "xci_path": "ip\\gameboy_blk_mem_gen_0_1\\gameboy_blk_mem_gen_0_1.xci",
+        "inst_hier_path": "BROM",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../../Downloads/COEGen-0.01/dmg_boot.bin.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Single_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "256"
+          },
+          "Write_Width_A": {
+            "value": "8"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "CART_ROM": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "gameboy_blk_mem_gen_0_2",
+        "xci_path": "ip\\gameboy_blk_mem_gen_0_2\\gameboy_blk_mem_gen_0_2.xci",
+        "inst_hier_path": "CART_ROM",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../../Downloads/COEGen-0.01/01-special.gb.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Always_Enabled"
+          },
+          "Fill_Remaining_Memory_Locations": {
+            "value": "false"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Single_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Register_PortA_Output_of_Memory_Core": {
+            "value": "false"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "65536"
+          },
+          "Write_Width_A": {
+            "value": "8"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "VRAM": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "gameboy_blk_mem_gen_0_3",
+        "xci_path": "ip\\gameboy_blk_mem_gen_0_3\\gameboy_blk_mem_gen_0_3.xci",
+        "inst_hier_path": "VRAM",
+        "parameters": {
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Operating_Mode_A": {
+            "value": "WRITE_FIRST"
+          },
+          "Read_Width_A": {
+            "value": "8"
+          },
+          "Register_PortA_Output_of_Memory_Core": {
+            "value": "false"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "8192"
+          },
+          "Write_Width_A": {
+            "value": "8"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "gameboy_clk_wiz_0_1",
+        "xci_path": "ip\\gameboy_clk_wiz_0_1\\gameboy_clk_wiz_0_1.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLKOUT1_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "147.252"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "94.994"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "48"
+          },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "209.561"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "94.994"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "8.4"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "CLKOUT3_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT3_JITTER": {
+            "value": "198.395"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "94.994"
+          },
+          "CLKOUT3_REQUESTED_OUT_FREQ": {
+            "value": "11.17021"
+          },
+          "CLKOUT3_USED": {
+            "value": "true"
+          },
+          "CLKOUT4_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT4_JITTER": {
+            "value": "158.056"
+          },
+          "CLKOUT4_PHASE_ERROR": {
+            "value": "94.994"
+          },
+          "CLKOUT4_REQUESTED_OUT_FREQ": {
+            "value": "35"
+          },
+          "CLKOUT4_USED": {
+            "value": "true"
+          },
+          "CLKOUT5_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT5_JITTER": {
+            "value": "113.523"
+          },
+          "CLKOUT5_PHASE_ERROR": {
+            "value": "94.994"
+          },
+          "CLKOUT5_REQUESTED_OUT_FREQ": {
+            "value": "175"
+          },
+          "CLKOUT5_SEQUENCE_NUMBER": {
+            "value": "1"
+          },
+          "CLKOUT5_USED": {
+            "value": "true"
+          },
+          "CLKOUT6_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "CLKOUT7_DRIVES": {
+            "value": "BUFGCE"
+          },
+          "FEEDBACK_SOURCE": {
+            "value": "FDBK_AUTO"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "10.500"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "10.000"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "21.875"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "125"
+          },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "94"
+          },
+          "MMCM_CLKOUT3_DIVIDE": {
+            "value": "30"
+          },
+          "MMCM_CLKOUT4_DIVIDE": {
+            "value": "6"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "1"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "5"
+          },
+          "USE_CLOCK_SEQUENCING": {
+            "value": "false"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          },
+          "USE_POWER_DOWN": {
+            "value": "true"
+          },
+          "USE_RESET": {
+            "value": "false"
+          },
+          "USE_SAFE_CLOCK_STARTUP": {
+            "value": "true"
+          }
+        }
+      },
+      "rgb2dvi_0": {
+        "vlnv": "digilentinc.com:ip:rgb2dvi:1.4",
+        "xci_name": "gameboy_rgb2dvi_0_0",
+        "xci_path": "ip\\gameboy_rgb2dvi_0_0\\gameboy_rgb2dvi_0_0.xci",
+        "inst_hier_path": "rgb2dvi_0",
+        "parameters": {
+          "kGenerateSerialClk": {
+            "value": "false"
+          }
+        }
+      },
+      "ALU": {
+        "vlnv": "xilinx.com:module_ref:ALU:1.0",
+        "xci_name": "gameboy_ALU_0_0",
+        "xci_path": "ip\\gameboy_ALU_0_0\\gameboy_ALU_0_0.xci",
+        "inst_hier_path": "ALU",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ALU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "op": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "bit_sel": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "A_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "F_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "4"
+          },
+          "F_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "4"
+          },
+          "bus_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "InternalBus1": {
+        "vlnv": "xilinx.com:module_ref:DataBus:1.0",
+        "xci_name": "gameboy_DataBus_0_0",
+        "xci_path": "ip\\gameboy_DataBus_0_0\\gameboy_DataBus_0_0.xci",
+        "inst_hier_path": "InternalBus1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DataBus",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "int_ack": {
+            "direction": "I"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "REG_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "bus2_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "BOOT_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "HRAM_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "INT_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ALU_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "bus1_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "SEL": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "HRAM_addr": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "HRAM_en": {
+            "direction": "O"
+          },
+          "HRAM_wr": {
+            "direction": "O"
+          },
+          "HRAM_data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "BOOT_addr": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "BOOT_en": {
+            "direction": "O"
+          },
+          "done": {
+            "direction": "O"
+          },
+          "MASK_e": {
+            "direction": "I"
+          }
+        }
+      },
+      "CPU": {
+        "vlnv": "xilinx.com:module_ref:CPU:1.0",
+        "xci_name": "gameboy_CPU_0_0",
+        "xci_path": "ip\\gameboy_CPU_0_0\\gameboy_CPU_0_0.xci",
+        "inst_hier_path": "CPU",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CPU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "irq_in": {
+            "direction": "I"
+          },
+          "int_ack": {
+            "direction": "O"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "mw": {
+            "direction": "O"
+          },
+          "mr": {
+            "direction": "O"
+          },
+          "bus_sel": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "bus_mask_en": {
+            "direction": "O"
+          },
+          "rr": {
+            "direction": "O"
+          },
+          "rw": {
+            "direction": "O"
+          },
+          "reg_sel": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "temp_latch": {
+            "direction": "O"
+          },
+          "acu_latch": {
+            "direction": "O"
+          },
+          "drr": {
+            "direction": "O"
+          },
+          "drw": {
+            "direction": "O"
+          },
+          "dreg_sel": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "addr_op": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "addr_mask": {
+            "direction": "O"
+          },
+          "alu_op": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "alu_bit_sel": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "alu_f_w": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "f_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "4"
+          },
+          "tmp_out": {
+            "direction": "O"
+          },
+          "STOP": {
+            "direction": "O"
+          }
+        }
+      },
+      "ICU_0": {
+        "vlnv": "xilinx.com:module_ref:ICU:1.0",
+        "xci_name": "gameboy_ICU_0_0",
+        "xci_path": "ip\\gameboy_ICU_0_0\\gameboy_ICU_0_0.xci",
+        "inst_hier_path": "ICU_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ICU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "btn_u": {
+            "direction": "I"
+          },
+          "btn_d": {
+            "direction": "I"
+          },
+          "btn_l": {
+            "direction": "I"
+          },
+          "btn_r": {
+            "direction": "I"
+          },
+          "btn_a": {
+            "direction": "I"
+          },
+          "btn_b": {
+            "direction": "I"
+          },
+          "btn_str": {
+            "direction": "I"
+          },
+          "btn_sel": {
+            "direction": "I"
+          },
+          "sin": {
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "O"
+          },
+          "sck": {
+            "direction": "O"
+          },
+          "ser": {
+            "direction": "O"
+          },
+          "joy": {
+            "direction": "O"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "bus_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "INT_0": {
+        "vlnv": "xilinx.com:module_ref:INT:1.0",
+        "xci_name": "gameboy_INT_0_0",
+        "xci_path": "ip\\gameboy_INT_0_0\\gameboy_INT_0_0.xci",
+        "inst_hier_path": "INT_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "INT",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "vblk": {
+            "direction": "I"
+          },
+          "lcdc": {
+            "direction": "I"
+          },
+          "tmr": {
+            "direction": "I"
+          },
+          "ser": {
+            "direction": "I"
+          },
+          "joy": {
+            "direction": "I"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "bus_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "int_ack": {
+            "direction": "I"
+          },
+          "int_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "MBC1": {
+        "vlnv": "xilinx.com:module_ref:MBC:1.0",
+        "xci_name": "gameboy_MBC_0_0",
+        "xci_path": "ip\\gameboy_MBC_0_0\\gameboy_MBC_0_0.xci",
+        "inst_hier_path": "MBC1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MBC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rd_n": {
+            "direction": "I"
+          },
+          "wr_n": {
+            "direction": "I"
+          },
+          "cs_n": {
+            "direction": "I"
+          },
+          "rom_0": {
+            "direction": "O"
+          },
+          "rom_1": {
+            "direction": "O"
+          },
+          "a_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "a_out": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "d_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "d_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "rom_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "InternalBus2": {
+        "vlnv": "xilinx.com:module_ref:MMU:1.0",
+        "xci_name": "gameboy_MMU_0",
+        "xci_path": "ip\\gameboy_MMU_0\\gameboy_MMU_0.xci",
+        "inst_hier_path": "InternalBus2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MMU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "bus2_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "cart_a": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "cart_re_n": {
+            "direction": "O"
+          },
+          "cart_we_n": {
+            "direction": "O"
+          },
+          "cart_cs_n": {
+            "direction": "O"
+          },
+          "cart_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "cart_data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "wram_a": {
+            "direction": "O",
+            "left": "12",
+            "right": "0"
+          },
+          "wram_e": {
+            "direction": "O"
+          },
+          "wram_we": {
+            "direction": "O"
+          },
+          "wram_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "wram_data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "tmr_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "apu_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "icu_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ppu_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ppu_read": {
+            "direction": "I"
+          }
+        }
+      },
+      "PPU": {
+        "vlnv": "xilinx.com:module_ref:PPU:1.0",
+        "xci_name": "gameboy_PPU_0_0",
+        "xci_path": "ip\\gameboy_PPU_0_0\\gameboy_PPU_0_0.xci",
+        "inst_hier_path": "PPU",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PPU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "we": {
+            "direction": "I"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "vblk": {
+            "direction": "O"
+          },
+          "lcdc_out": {
+            "direction": "O"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "vram_e": {
+            "direction": "O"
+          },
+          "vram_wr": {
+            "direction": "O"
+          },
+          "vram_a": {
+            "direction": "O",
+            "left": "12",
+            "right": "0"
+          },
+          "dma_req": {
+            "direction": "O"
+          },
+          "vram_data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "vram_data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "lcd_vsync": {
+            "direction": "O"
+          },
+          "lcd_hsync": {
+            "direction": "O"
+          },
+          "lcd_valid": {
+            "direction": "O"
+          },
+          "lcd_pixel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "lcd_en": {
+            "direction": "O"
+          },
+          "dma_addr": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "Registers": {
+        "vlnv": "xilinx.com:module_ref:Registers:1.0",
+        "xci_name": "gameboy_Registers_0_0",
+        "xci_path": "ip\\gameboy_Registers_0_0\\gameboy_Registers_0_0.xci",
+        "inst_hier_path": "Registers",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Registers",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rr": {
+            "direction": "I"
+          },
+          "rw": {
+            "direction": "I"
+          },
+          "drr": {
+            "direction": "I"
+          },
+          "drw": {
+            "direction": "I"
+          },
+          "tmp_in": {
+            "direction": "I"
+          },
+          "flag_op": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "flag_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "4"
+          },
+          "flag_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "4"
+          },
+          "mask_en": {
+            "direction": "I"
+          },
+          "addr_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "addr_out": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "sel_reg": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "sel_dreg": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "addr_op": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "AddressBusMux_0": {
+        "vlnv": "xilinx.com:module_ref:AddressBusMux:1.0",
+        "xci_name": "gameboy_AddressBusMux_0_0",
+        "xci_path": "ip\\gameboy_AddressBusMux_0_0\\gameboy_AddressBusMux_0_0.xci",
+        "inst_hier_path": "AddressBusMux_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "AddressBusMux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "addr_a": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "addr_b": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "addr": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "hold": {
+            "direction": "I"
+          }
+        }
+      },
+      "APU_0": {
+        "vlnv": "xilinx.com:module_ref:APU:1.0",
+        "xci_name": "gameboy_APU_0_0",
+        "xci_path": "ip\\gameboy_APU_0_0\\gameboy_APU_0_0.xci",
+        "inst_hier_path": "APU_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "APU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "frame_tck": {
+            "direction": "I"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "left": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "right": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "c1_en": {
+            "direction": "O"
+          }
+        }
+      },
+      "ALU_B": {
+        "vlnv": "xilinx.com:module_ref:Bus_Latch:1.0",
+        "xci_name": "gameboy_Bus_Latch_0_0",
+        "xci_path": "ip\\gameboy_Bus_Latch_0_0\\gameboy_Bus_Latch_0_0.xci",
+        "inst_hier_path": "ALU_B",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Bus_Latch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "set": {
+            "direction": "I"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "O": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "ALU_A": {
+        "vlnv": "xilinx.com:module_ref:Bus_Latch:1.0",
+        "xci_name": "gameboy_Bus_Latch_0_1",
+        "xci_path": "ip\\gameboy_Bus_Latch_0_1\\gameboy_Bus_Latch_0_1.xci",
+        "inst_hier_path": "ALU_A",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Bus_Latch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "set": {
+            "direction": "I"
+          },
+          "bus_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "O": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "DebugCable_0": {
+        "vlnv": "xilinx.com:module_ref:DebugCable:1.0",
+        "xci_name": "gameboy_DebugCable_0_0",
+        "xci_path": "ip\\gameboy_DebugCable_0_0\\gameboy_DebugCable_0_0.xci",
+        "inst_hier_path": "DebugCable_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DebugCable",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "sclk": {
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "I"
+          },
+          "act": {
+            "direction": "O"
+          },
+          "uart": {
+            "direction": "O"
+          }
+        }
+      },
+      "div_0": {
+        "vlnv": "xilinx.com:module_ref:div:1.0",
+        "xci_name": "gameboy_div_0_0",
+        "xci_path": "ip\\gameboy_div_0_0\\gameboy_div_0_0.xci",
+        "inst_hier_path": "div_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "div",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "clk_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "HRAM_0": {
+        "vlnv": "xilinx.com:module_ref:HRAM:1.0",
+        "xci_name": "gameboy_HRAM_0_0",
+        "xci_path": "ip\\gameboy_HRAM_0_0\\gameboy_HRAM_0_0.xci",
+        "inst_hier_path": "HRAM_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "HRAM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "wr": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "Timer_0": {
+        "vlnv": "xilinx.com:module_ref:Timer:1.0",
+        "xci_name": "gameboy_Timer_0_0",
+        "xci_path": "ip\\gameboy_Timer_0_0\\gameboy_Timer_0_0.xci",
+        "inst_hier_path": "Timer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Timer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "we": {
+            "direction": "I"
+          },
+          "re": {
+            "direction": "I"
+          },
+          "int_out": {
+            "direction": "O"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "apu_tck": {
+            "direction": "O"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "video_gen_0": {
+        "vlnv": "xilinx.com:module_ref:video_gen:1.0",
+        "xci_name": "gameboy_video_gen_0_0",
+        "xci_path": "ip\\gameboy_video_gen_0_0\\gameboy_video_gen_0_0.xci",
+        "inst_hier_path": "video_gen_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "video_gen",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "vertsync": {
+            "direction": "I"
+          },
+          "horsync": {
+            "direction": "I"
+          },
+          "datalch": {
+            "direction": "I"
+          },
+          "data": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "control": {
+            "direction": "I"
+          },
+          "hsync": {
+            "direction": "O"
+          },
+          "vsync": {
+            "direction": "O"
+          },
+          "vde": {
+            "direction": "O"
+          },
+          "pixel": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "ALU_F_out": {
+        "ports": [
+          "ALU/F_out",
+          "CPU/f_in",
+          "Registers/flag_in"
+        ]
+      },
+      "ALU_bus_out": {
+        "ports": [
+          "ALU/bus_out",
+          "InternalBus1/ALU_in"
+        ]
+      },
+      "APU_0_data_out": {
+        "ports": [
+          "APU_0/data_out",
+          "InternalBus2/apu_data_in"
+        ]
+      },
+      "AddressBusMux_0_addr": {
+        "ports": [
+          "AddressBusMux_0/addr",
+          "ICU_0/addr",
+          "InternalBus2/addr",
+          "PPU/addr",
+          "APU_0/addr",
+          "Timer_0/addr"
+        ]
+      },
+      "BROM_douta": {
+        "ports": [
+          "BROM/douta",
+          "InternalBus1/BOOT_in"
+        ]
+      },
+      "Bus_Latch_0_O": {
+        "ports": [
+          "ALU_B/O",
+          "ALU/bus_in"
+        ]
+      },
+      "Bus_Latch_0_O1": {
+        "ports": [
+          "ALU_A/O",
+          "ALU/A_in"
+        ]
+      },
+      "CART_ROM_douta": {
+        "ports": [
+          "CART_ROM/douta",
+          "MBC1/rom_in"
+        ]
+      },
+      "CPU_STOP": {
+        "ports": [
+          "CPU/STOP",
+          "led_0",
+          "clk_wiz_0/power_down"
+        ]
+      },
+      "CPU_acu_latch": {
+        "ports": [
+          "CPU/acu_latch",
+          "ALU_A/set"
+        ]
+      },
+      "CPU_addr": {
+        "ports": [
+          "Registers/addr_out",
+          "InternalBus1/addr",
+          "INT_0/addr",
+          "Registers/addr_in",
+          "AddressBusMux_0/addr_a"
+        ]
+      },
+      "CPU_addr_mask": {
+        "ports": [
+          "CPU/addr_mask",
+          "Registers/mask_en"
+        ]
+      },
+      "CPU_addr_op": {
+        "ports": [
+          "CPU/addr_op",
+          "Registers/addr_op"
+        ]
+      },
+      "CPU_alu_bit_sel": {
+        "ports": [
+          "CPU/alu_bit_sel",
+          "ALU/bit_sel"
+        ]
+      },
+      "CPU_alu_f_w": {
+        "ports": [
+          "CPU/alu_f_w",
+          "Registers/flag_op"
+        ]
+      },
+      "CPU_alu_op": {
+        "ports": [
+          "CPU/alu_op",
+          "ALU/op"
+        ]
+      },
+      "CPU_bus_mask_en": {
+        "ports": [
+          "CPU/bus_mask_en",
+          "InternalBus1/MASK_e"
+        ]
+      },
+      "CPU_bus_sel": {
+        "ports": [
+          "CPU/bus_sel",
+          "InternalBus1/SEL"
+        ]
+      },
+      "CPU_dreg_r": {
+        "ports": [
+          "CPU/drr",
+          "Registers/drr"
+        ]
+      },
+      "CPU_dreg_sel": {
+        "ports": [
+          "CPU/dreg_sel",
+          "Registers/sel_dreg"
+        ]
+      },
+      "CPU_dreg_w": {
+        "ports": [
+          "CPU/drw",
+          "Registers/drw"
+        ]
+      },
+      "CPU_int_ack": {
+        "ports": [
+          "CPU/int_ack",
+          "InternalBus1/int_ack",
+          "INT_0/int_ack"
+        ]
+      },
+      "CPU_re": {
+        "ports": [
+          "CPU/mr",
+          "InternalBus1/re",
+          "ICU_0/re",
+          "INT_0/re",
+          "InternalBus2/re",
+          "PPU/re",
+          "APU_0/re",
+          "Timer_0/re"
+        ]
+      },
+      "CPU_reg_r": {
+        "ports": [
+          "CPU/rr",
+          "Registers/rr"
+        ]
+      },
+      "CPU_reg_sel": {
+        "ports": [
+          "CPU/reg_sel",
+          "Registers/sel_reg"
+        ]
+      },
+      "CPU_reg_w": {
+        "ports": [
+          "CPU/rw",
+          "Registers/rw"
+        ]
+      },
+      "CPU_temp_latch": {
+        "ports": [
+          "CPU/temp_latch",
+          "ALU_B/set"
+        ]
+      },
+      "CPU_tmp_out": {
+        "ports": [
+          "CPU/tmp_out",
+          "Registers/tmp_in"
+        ]
+      },
+      "CPU_we": {
+        "ports": [
+          "CPU/mw",
+          "InternalBus1/we",
+          "ICU_0/we",
+          "INT_0/we",
+          "InternalBus2/we",
+          "PPU/we",
+          "APU_0/we",
+          "Timer_0/we"
+        ]
+      },
+      "DataBus_0_DATA": {
+        "ports": [
+          "InternalBus1/bus1_out",
+          "CPU/bus_in",
+          "INT_0/bus_in",
+          "InternalBus2/data_in",
+          "Registers/data_in",
+          "ALU_B/bus_in",
+          "ALU_A/bus_in"
+        ]
+      },
+      "DataBus_BOOT_addr": {
+        "ports": [
+          "InternalBus1/BOOT_addr",
+          "BROM/addra"
+        ]
+      },
+      "DataBus_BOOT_en": {
+        "ports": [
+          "InternalBus1/BOOT_en",
+          "BROM/ena"
+        ]
+      },
+      "DataBus_HRAM_addr": {
+        "ports": [
+          "InternalBus1/HRAM_addr",
+          "HRAM_0/addr"
+        ]
+      },
+      "DataBus_HRAM_en": {
+        "ports": [
+          "InternalBus1/HRAM_en",
+          "HRAM_0/en"
+        ]
+      },
+      "DataBus_HRAM_wr": {
+        "ports": [
+          "InternalBus1/HRAM_wr",
+          "HRAM_0/wr"
+        ]
+      },
+      "DebugCable_0_uart": {
+        "ports": [
+          "DebugCable_0/uart",
+          "uart_rx_out"
+        ]
+      },
+      "HRAM_0_data_out": {
+        "ports": [
+          "HRAM_0/data_out",
+          "InternalBus1/HRAM_in"
+        ]
+      },
+      "ICU_0_bus_out": {
+        "ports": [
+          "ICU_0/bus_out",
+          "InternalBus2/icu_data_in"
+        ]
+      },
+      "ICU_0_int_out": {
+        "ports": [
+          "INT_0/int_out",
+          "CPU/irq_in"
+        ]
+      },
+      "ICU_0_joy": {
+        "ports": [
+          "ICU_0/joy",
+          "INT_0/joy"
+        ]
+      },
+      "ICU_0_sck": {
+        "ports": [
+          "ICU_0/sck",
+          "DebugCable_0/sclk"
+        ]
+      },
+      "ICU_0_ser": {
+        "ports": [
+          "ICU_0/ser",
+          "INT_0/ser"
+        ]
+      },
+      "ICU_0_sout": {
+        "ports": [
+          "ICU_0/sout",
+          "DebugCable_0/sout"
+        ]
+      },
+      "INT_0_bus_out": {
+        "ports": [
+          "INT_0/bus_out",
+          "InternalBus1/INT_in"
+        ]
+      },
+      "InternalBus1_HRAM_data_out": {
+        "ports": [
+          "InternalBus1/HRAM_data_out",
+          "HRAM_0/data_in"
+        ]
+      },
+      "InternalBus2_cart_re_n": {
+        "ports": [
+          "InternalBus2/cart_re_n",
+          "MBC1/rd_n"
+        ]
+      },
+      "InternalBus2_cart_we_n": {
+        "ports": [
+          "InternalBus2/cart_we_n",
+          "MBC1/wr_n"
+        ]
+      },
+      "MBC1_a_out": {
+        "ports": [
+          "MBC1/a_out",
+          "CART_ROM/addra"
+        ]
+      },
+      "MBC1_d_out": {
+        "ports": [
+          "MBC1/d_out",
+          "InternalBus2/cart_data_in"
+        ]
+      },
+      "MBC1_rom_0": {
+        "ports": [
+          "MBC1/rom_0",
+          "led_1"
+        ]
+      },
+      "MBC1_rom_1": {
+        "ports": [
+          "MBC1/rom_1",
+          "led_2"
+        ]
+      },
+      "MMU_0_ram_a": {
+        "ports": [
+          "InternalBus2/wram_a",
+          "WRAM/addra"
+        ]
+      },
+      "MMU_0_ram_data_out": {
+        "ports": [
+          "InternalBus2/wram_data_out",
+          "WRAM/dina"
+        ]
+      },
+      "MMU_0_ram_e": {
+        "ports": [
+          "InternalBus2/wram_e",
+          "WRAM/ena"
+        ]
+      },
+      "MMU_0_ram_we": {
+        "ports": [
+          "InternalBus2/wram_we",
+          "WRAM/wea"
+        ]
+      },
+      "MMU_bus2_out": {
+        "ports": [
+          "InternalBus2/bus2_out",
+          "ICU_0/bus_in",
+          "PPU/data_in",
+          "APU_0/data_in",
+          "Timer_0/data_in"
+        ]
+      },
+      "MMU_cart_a": {
+        "ports": [
+          "InternalBus2/cart_a",
+          "MBC1/a_in"
+        ]
+      },
+      "MMU_cart_cs_n": {
+        "ports": [
+          "InternalBus2/cart_cs_n",
+          "MBC1/cs_n"
+        ]
+      },
+      "MMU_cart_data_out": {
+        "ports": [
+          "InternalBus2/cart_data_out",
+          "MBC1/d_in"
+        ]
+      },
+      "MMU_data_out": {
+        "ports": [
+          "InternalBus2/data_out",
+          "InternalBus1/bus2_in"
+        ]
+      },
+      "PPU_data_out": {
+        "ports": [
+          "PPU/data_out",
+          "InternalBus2/ppu_data_in"
+        ]
+      },
+      "PPU_dma_addr": {
+        "ports": [
+          "PPU/dma_addr",
+          "AddressBusMux_0/addr_b"
+        ]
+      },
+      "PPU_dma_req": {
+        "ports": [
+          "PPU/dma_req",
+          "led_3"
+        ]
+      },
+      "PPU_lcd_en": {
+        "ports": [
+          "PPU/lcd_en",
+          "video_gen_0/control"
+        ]
+      },
+      "PPU_lcd_hsync": {
+        "ports": [
+          "PPU/lcd_hsync",
+          "video_gen_0/horsync"
+        ]
+      },
+      "PPU_lcd_pixel": {
+        "ports": [
+          "PPU/lcd_pixel",
+          "video_gen_0/data"
+        ]
+      },
+      "PPU_lcd_valid": {
+        "ports": [
+          "PPU/lcd_valid",
+          "video_gen_0/datalch"
+        ]
+      },
+      "PPU_lcd_vsync": {
+        "ports": [
+          "PPU/lcd_vsync",
+          "video_gen_0/vertsync"
+        ]
+      },
+      "PPU_stat_out": {
+        "ports": [
+          "PPU/lcdc_out",
+          "INT_0/lcdc"
+        ]
+      },
+      "PPU_vblk": {
+        "ports": [
+          "PPU/vblk",
+          "INT_0/vblk"
+        ]
+      },
+      "PPU_vram_a": {
+        "ports": [
+          "PPU/vram_a",
+          "VRAM/addra"
+        ]
+      },
+      "PPU_vram_data_out": {
+        "ports": [
+          "PPU/vram_data_out",
+          "VRAM/dina"
+        ]
+      },
+      "PPU_vram_e": {
+        "ports": [
+          "PPU/vram_e",
+          "VRAM/ena"
+        ]
+      },
+      "PPU_vram_wr": {
+        "ports": [
+          "PPU/vram_wr",
+          "VRAM/wea"
+        ]
+      },
+      "Registers_0_data_out": {
+        "ports": [
+          "Registers/data_out",
+          "InternalBus1/REG_in"
+        ]
+      },
+      "Registers_flag_out": {
+        "ports": [
+          "Registers/flag_out",
+          "ALU/F_in"
+        ]
+      },
+      "Timer_0_apu_tck": {
+        "ports": [
+          "Timer_0/apu_tck",
+          "APU_0/frame_tck"
+        ]
+      },
+      "Timer_0_data_out": {
+        "ports": [
+          "Timer_0/data_out",
+          "InternalBus2/tmr_data_in"
+        ]
+      },
+      "Timer_0_int": {
+        "ports": [
+          "Timer_0/int_out",
+          "INT_0/tmr"
+        ]
+      },
+      "VRAM_douta": {
+        "ports": [
+          "VRAM/douta",
+          "PPU/vram_data_in"
+        ]
+      },
+      "WRAM_0_douta": {
+        "ports": [
+          "WRAM/douta",
+          "InternalBus2/wram_data_in"
+        ]
+      },
+      "btn_a_1": {
+        "ports": [
+          "btn_a",
+          "ICU_0/btn_a"
+        ]
+      },
+      "btn_d_1": {
+        "ports": [
+          "btn_d",
+          "ICU_0/btn_d"
+        ]
+      },
+      "btn_l_1": {
+        "ports": [
+          "btn_l",
+          "ICU_0/btn_l"
+        ]
+      },
+      "btn_r_1": {
+        "ports": [
+          "btn_r",
+          "ICU_0/btn_r"
+        ]
+      },
+      "btn_u_1": {
+        "ports": [
+          "btn_u",
+          "ICU_0/btn_str"
+        ]
+      },
+      "clk": {
+        "ports": [
+          "div_0/clk_out",
+          "WRAM/clka",
+          "BROM/clka",
+          "CART_ROM/clka",
+          "VRAM/clka",
+          "InternalBus1/clk",
+          "CPU/clk",
+          "ICU_0/clk",
+          "INT_0/clk",
+          "MBC1/clk",
+          "InternalBus2/clk",
+          "PPU/clk",
+          "Registers/clk",
+          "APU_0/clk",
+          "ALU_B/clk",
+          "ALU_A/clk",
+          "HRAM_0/clk",
+          "Timer_0/clk"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "div_0/clk_in"
+        ]
+      },
+      "clk_wiz_0_clk_out3": {
+        "ports": [
+          "clk_wiz_0/clk_out3",
+          "DebugCable_0/clk"
+        ]
+      },
+      "clk_wiz_0_clk_out4": {
+        "ports": [
+          "clk_wiz_0/clk_out4",
+          "rgb2dvi_0/PixelClk",
+          "video_gen_0/clk"
+        ]
+      },
+      "clk_wiz_0_clk_out5": {
+        "ports": [
+          "clk_wiz_0/clk_out5",
+          "rgb2dvi_0/SerialClk"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "InternalBus1/rst_n",
+          "CPU/rst_n",
+          "PPU/rst_n",
+          "Registers/rst_n",
+          "APU_0/rst_n",
+          "Timer_0/rst_n"
+        ]
+      },
+      "rgb2dvi_0_TMDS_Clk_n": {
+        "ports": [
+          "rgb2dvi_0/TMDS_Clk_n",
+          "hdmi_tx_clk_n"
+        ]
+      },
+      "rgb2dvi_0_TMDS_Clk_p": {
+        "ports": [
+          "rgb2dvi_0/TMDS_Clk_p",
+          "hdmi_tx_clk_p"
+        ]
+      },
+      "rgb2dvi_0_TMDS_Data_n": {
+        "ports": [
+          "rgb2dvi_0/TMDS_Data_n",
+          "hdmi_tx_n"
+        ]
+      },
+      "rgb2dvi_0_TMDS_Data_p": {
+        "ports": [
+          "rgb2dvi_0/TMDS_Data_p",
+          "hdmi_tx_p"
+        ]
+      },
+      "video_gen_0_hsync": {
+        "ports": [
+          "video_gen_0/hsync",
+          "rgb2dvi_0/vid_pHSync"
+        ]
+      },
+      "video_gen_0_pixel": {
+        "ports": [
+          "video_gen_0/pixel",
+          "rgb2dvi_0/vid_pData"
+        ]
+      },
+      "video_gen_0_vde": {
+        "ports": [
+          "video_gen_0/vde",
+          "rgb2dvi_0/vid_pVDE"
+        ]
+      },
+      "video_gen_0_vsync": {
+        "ports": [
+          "video_gen_0/vsync",
+          "rgb2dvi_0/vid_pVSync"
+        ]
+      }
+    }
+  }
+}
